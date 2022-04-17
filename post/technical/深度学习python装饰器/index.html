@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme=""
+  class="html"
+><head>
+  <title>
+    
+      Gavin Gao
+        |
+        深度学习python装饰器
+
+
+      
+
+
+    
+  </title>
+
+  
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.97.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="Gavin Gao" />
+  <meta
+    name="description"
+    content="
+      Python装饰器是个很好玩的东西，让我们一步一步来了解这个东西...
+
+
+    "
+  />
+  
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/scss/main.min.91c219aefcfd49429492d073fcd4c34c62824982e597c7b13c4ab8a60a651c3a.css"
+      integrity="sha256-kcIZrvz9SUKUktBz/NTDTGKCSYLll8exPEq4pgplHDo="
+      crossorigin="anonymous"
+      type="text/css"
+    />
+
+  
+
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.31b0a1f317f55c529a460897848c97436bb138b19c399b37de70d463a8bf6ed5.css"
+    integrity="sha256-MbCh8xf1XFKaRgiXhIyXQ2uxOLGcOZs33nDUY6i/btU="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.69685904d5c2a0c6258d03c207b778c10466edf6cea928cc0164c376b0ad0930.css"
+    integrity="sha256-aWhZBNXCoMYljQPCB7d4wQRm7fbOqSjMAWTDdrCtCTA="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.6d585e78d28cce1200d39fb133c92ed83df01738da721d0f48fb6eac62d24e04.css"
+    integrity="sha256-bVheeNKMzhIA05&#43;xM8ku2D3wFzjach0PSPturGLSTgQ="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.6b00d96498d59caa0dbcf9b49d30d821915291f2ceb0e19248523c8607ff43fa.css"
+    integrity="sha256-awDZZJjVnKoNvPm0nTDYIZFSkfLOsOGSSFI8hgf/Q/o="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+  <link rel="canonical" href="#ZgotmplZ" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.560a26330d27ff44a44e83b53cd07a95d4230a65930d31c5c76a8d481e5b35bf.js"
+      integrity="sha256-VgomMw0n/0SkToO1PNB6ldQjCmWTDTHFx2qNSB5bNb8="
+      crossorigin="anonymous"
+    ></script>
+
+  
+
+  
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="深度学习python装饰器"/>
+<meta name="twitter:description" content="Python装饰器是个很好玩的东西，让我们一步一步来了解这个东西..."/>
+
+
+
+  
+  <meta property="og:title" content="深度学习python装饰器" />
+<meta property="og:description" content="Python装饰器是个很好玩的东西，让我们一步一步来了解这个东西..." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="localhost:1313/post/technical/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0python%E8%A3%85%E9%A5%B0%E5%99%A8/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2015-11-18T21:30:30+08:00" />
+<meta property="article:modified_time" content="2015-11-18T21:30:30+08:00" /><meta property="og:site_name" content="升升的笔记本" />
+
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "深度学习python装饰器",
+        "headline": "深度学习python装饰器",
+        "alternativeHeadline": "",
+        "description": "
+      Python装饰器是个很好玩的东西，让我们一步一步来了解这个东西...
+
+
+    ",
+        "inLanguage": "utf-8",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "localhost:1313\/post\/technical\/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0python%E8%A3%85%E9%A5%B0%E5%99%A8\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Gavin Gao"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Gavin Gao"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Gavin Gao"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Gavin Gao"
+        },
+        "copyrightYear" : "2015",
+        "dateCreated": "2015-11-18T21:30:30.00Z",
+        "datePublished": "2015-11-18T21:30:30.00Z",
+        "dateModified": "2015-11-18T21:30:30.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Gavin Gao",
+            "url": "localhost:1313",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "localhost:1313favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "localhost:1313\/post\/technical\/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0python%E8%A3%85%E9%A5%B0%E5%99%A8\/",
+        "wordCount" : "293",
+        "genre" : [ 
+      
+      "Python大法"
+
+    ],
+        "keywords" : [ ]
+    }
+  </script>
+
+
+
+</head>
+<body
+    
+      class="body theme--light"
+
+    
+  >
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="/img/keep.jpg"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/">升升的笔记本</a>
+        </div>
+
+      
+      <div class="sidebar__introduction-description">
+        <p>路漫漫其修远兮，吾将上下而求索</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a href="https://github.com/GaoJiasheng" rel="me" aria-label="Github" title="Github">
+            <i class="fa-brands fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+        <li class="sidebar__list-item">
+          <a href="mailto:gaojiasheng.him@foxmail.com" rel="me" aria-label="e-mail" title="e-mail">
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+    </ul>
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Gavin Gao 2022
+
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9c062c557275acbaba71f0c7cd4024da3e3cc825d248bc4b2130811b0965330b.js"
+    integrity="sha256-nAYsVXJ1rLq6cfDHzUAk2j48yCXSSLxLITCBGwllMws="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        <li class="nav__list-item">
+          <a
+            
+            href="/"
+            
+            title=""
+            >Home</a
+          >
+        </li>
+
+      
+        
+        <li class="nav__list-item">
+          <a
+            
+            href="/post/"
+            
+            title=""
+            >时间线</a
+          >
+        </li>
+
+      
+        
+        <li class="nav__list-item">
+          <a
+            
+            href="/index/mycv/"
+            
+            title="关于我"
+            >关于我</a
+          >
+        </li>
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+
+    "
+  >
+    
+    <div class="post__content">
+      <h1>深度学习python装饰器</h1>
+      
+        <ul class="post__meta">
+          <li class="post__meta-item">
+            <em class="fas fa-calendar-day post__meta-icon"></em>
+            <span class="post__meta-text"
+              >
+                Wed, Nov 18, 2015
+
+
+              
+            </span>
+          </li>
+          <li class="post__meta-item">
+            <em class="fas fa-stopwatch post__meta-icon"></em>
+            <span class="post__meta-text">2-minute read</span>
+          </li>
+        </ul>
+
+      <p>Python装饰器是个很好玩的东西，我们一步一步来了解这个东西。</p>
+<h2 id="首先有一个函数">首先，有一个函数</h2>
+<p>首先，python的函数，不用多说了吧？最简单的例子如下：</p>
+<pre><code>def do():   #定义一个简单的函数
+    print &quot;I am doing something...&quot;
+</code></pre>
+<h2 id="然后要知道一切皆对象">然后要知道，一切皆对象</h2>
+<p>python中，一切皆是对象。函数也一样：</p>
+<pre><code>do2 = do  #把函数赋值给另一个变量，仍然可以直接使用
+do2()
+</code></pre>
+<p>把函数赋值给另一个变量，仍然可以直接使用</p>
+<h2 id="切片的需求">切片的需求</h2>
+<p>现在有个新的需求，要在调用do这个函数的之前和之后，都要做一些事情。
+也就是要让do这个函数，插入到一个逻辑的中间去。
+也可以理解为“<strong>我们正在往面包里夹火腿</strong>”。</p>
+<p>那我们代码可以这么写：</p>
+<pre><code>def new_do():
+    print &quot;Before : Do something ...&quot;
+    do()   #do处在一个逻辑的中间，这是一种切片的设计模式
+    print &quot;After : Do somthing ...&quot;
+</code></pre>
+<p>到这里，之前的需求已经得到了解决。</p>
+<h2 id="代码的可复用">代码的可复用</h2>
+<p>然而，事情没有那么简单。</p>
+<p>现在我们有很多个与do类似的函数，do2、do3、do4，都需要用这同一个切片逻辑。难道我要重复定义new_do2、new_do3吗？
+当然不是，我们可以这样让代码复用起来：</p>
+<pre><code>def new_do(func):
+	print &quot;Before : Do something ...&quot;
+	func()
+	print &quot;After : Do something ...&quot;
+
+new_do(do)
+new_do(do1)
+new_do(do2)
+</code></pre>
+<p>代码复用起来了，我们并没有多写代码，很赞。</p>
+<h2 id="如何更快速的更新到代码">如何更快速的更新到代码</h2>
+<p>工程师追求完美的脚步是永远不会停止的。
+如果添加这个切片的需求，是一个后期的需求，而我的do、do1、do2、do3&hellip;等等的函数，已经分布在了我所有代码中的n个文件的m行了。
+我是不是要把每个地方的函数调用都修改成这样呢：</p>
+<pre><code>new_do(do)  #原来是do()，如果有200处，我要处处修改
+</code></pre>
+<p>很显然，这并不是最优的方案。</p>
+<p>毋庸置疑，最优的方案，肯定是不需要处处去修改的。
+那我们就可以以这个为目标，来思考怎样可以不用处处修改。</p>
+<p>原调用如果仍然是do()，同时还要做到new_do的逻辑，我们只能替换do的函数定义。
+就像这样：</p>
+<pre><code>do = new_do(do)
+do2 = new_do(do2)
+</code></pre>
+<p>这样一来，python的万物皆对象这一点特性就派上用场了。
+new_do的定义就呼之欲出了：</p>
+<pre><code>def new_do(func):
+    def do_with_logical():
+        print &quot;Before : Do something ...&quot;
+        func()
+	    print &quot;After : Do something ...&quot;
+	return do_with_logical
+
+do = new_do(do)
+do2 = new_do(do2)
+</code></pre>
+<p>new_do将返回一个函数，这个函数，是封装过了函数do的添加了逻辑的新的函数。
+我们在源头替换了do的定义，这样只需要替换do的定义就可以了。</p>
+<h2 id="装饰器">装饰器</h2>
+<p>其实到了这里，装饰器就已经有了，new_do就是一个很典型的装饰器了。
+就像是给一个函数加了一件装饰。因此叫装饰器。</p>
+<p>但是这么写，是不是不用高端不够大气不够上档次？
+没有几个语法糖，你好意思出来说自己是高级语言？</p>
+<p>语法糖来了：</p>
+<pre><code>@new_do
+def do():
+    print &quot;Do Something...&quot;
+</code></pre>
+<p>是不是感觉很清爽很干净很高端很让不懂的人感觉高大上？好的，目的达到了。</p>
+<h2 id="函数带参数">函数带参数</h2>
+<p>函数带参数怎么办呢？这个也简单，返回的那个函数支持下参数不就好了？</p>
+<pre><code>def new_do(func):
+    def do_with_logical(a, b):
+        print &quot;Before : Do something ...&quot;
+        func(a, b)
+	    print &quot;After : Do something ...&quot;
+	return do_with_logical
+
+@new_do
+def do(a, b):
+    print &quot;In do &quot;, a, b
+
+do(1, 2)
+</code></pre>
+<p>搞定！</p>
+<h2 id="函数参数可变">函数参数可变</h2>
+<p>然而，还是那句话，工程师追求完美的脚步是永远无法停止的。
+如果do1、do2、do3的参数并不是那么的规整，而这些参数又与我们装饰器的逻辑无关。
+理论上代码仍然是可复用的。
+要屏蔽参数的影响，那我们装饰器返回的这个方法，首先得支持可变参数：</p>
+<pre><code>def new_do(func):
+    def do_with_logical(*args, **xwargs):
+        print &quot;Before : Do something ...&quot;
+        func(*args, **xwargs)
+	    print &quot;After : Do something ...&quot;
+	return do_with_logical
+
+@new_do
+def do(a, b):
+    print &quot;In do &quot;, a, b
+
+@new_do
+def do1(a, b, c, d):
+    print &quot;In do1&quot;, a, b, c, d
+
+do(1, 2)
+do1(1, 2, 3, 4) 
+</code></pre>
+<h2 id="装饰器带参数">装饰器带参数</h2>
+<p>好了，现在我们的装饰器已经渐渐完善起来了，还缺点什么呢？
+我们装饰器的逻辑是固定的，是否可以让装饰器带上参数，这样逻辑就可以更灵活呢？</p>
+<p>让我们一步步来分析。
+原来，我们的逻辑是这样的：</p>
+<pre><code>@new_do
+def do():
+    print &quot;Do Something ...&quot;
+</code></pre>
+<p>这个写法其实是等同于：</p>
+<pre><code>def do():
+    print &quot;Do Somethins ...&quot;
+
+do = new_do(do)
+</code></pre>
+<p>现在我们想要给装饰器加参数，我们的写法就要变成这样：</p>
+<pre><code>do = new_do(&quot;args&quot;)(do)
+</code></pre>
+<p>根据上述的调用方法，我们可以来思考下装饰器的定义需要有哪些变化：</p>
+<ul>
+<li>new_do(&ldquo;args&rdquo;)其实等同于曾经的new_do</li>
+<li>其他的逻辑，还是要遵从之前的定义</li>
+</ul>
+<p>新的new_do定义，就变成了这样：</p>
+<pre><code>def new_do(module):
+    def ori_new_do(func):
+        def do_with_logical(*args, **xwargs):
+            print &quot;[%s]Before : Do something ...&quot; % (module, )
+            func()
+		    print &quot;[%s]After : Do something ...&quot; % (module, )
+		return do_with_logical
+	
+	return ori_new_do
+
+@new_do(&quot;LogModule&quot;)
+def do():
+	print &quot;In do function&quot;
+
+@new_do(&quot;NewModule&quot;)
+def do2():
+	print &quot;In do2 function&quot;
+</code></pre>
+<p>其实原理与之前的是一样的，新的new_do(&ldquo;module&rdquo;)与之前的new_do是等价的。
+只是多封装了一层，对参数处理之后，返回之前的new_do，接下来逻辑就跟之前一样了。</p>
+<h2 id="发散">发散</h2>
+<p>装饰器可以带参数了，在python中“一切皆对象”又派上用场了，你可以把任何的东西传给装饰器，比如说，类。
+感觉这是个应该是个很有意思的玩法，虽然我没在实际项目中试过。</p>
+</div>
+    <div class="post__footer">
+      
+        <span><a class="category" href="/categories/python%E5%A4%A7%E6%B3%95/">Python大法</a></span>
+
+
+
+
+      
+
+      
+    </div>
+
+    
+  </div>
+
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Gavin Gao 2022
+
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9c062c557275acbaba71f0c7cd4024da3e3cc825d248bc4b2130811b0965330b.js"
+    integrity="sha256-nAYsVXJ1rLq6cfDHzUAk2j48yCXSSLxLITCBGwllMws="
+    crossorigin="anonymous"
+  ></script></body>
+</html>

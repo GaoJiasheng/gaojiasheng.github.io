@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Golang心得 on </title>
+    <link>localhost:1313/categories/golang%E5%BF%83%E5%BE%97/</link>
+    <description>Recent content in Golang心得 on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>utf-8</language>
+    <lastBuildDate>Thu, 12 May 2016 22:23:00 +0800</lastBuildDate><atom:link href="localhost:1313/categories/golang%E5%BF%83%E5%BE%97/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang的Interface——更强大的面向对象</title>
+      <link>localhost:1313/post/technical/golang%E7%9A%84interface%E6%9B%B4%E5%BC%BA%E5%A4%A7%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</link>
+      <pubDate>Thu, 12 May 2016 22:23:00 +0800</pubDate>
+      
+      <guid>localhost:1313/post/technical/golang%E7%9A%84interface%E6%9B%B4%E5%BC%BA%E5%A4%A7%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</guid>
+      
+        <description>Go语言中，是没有类这个概念的。但实际上，抽象却是无处不在的。</description>
+      
+    </item>
+    
+    <item>
+      <title>Go的异常处理（附最佳实践）</title>
+      <link>localhost:1313/post/technical/go%E7%9A%84%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E9%99%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Mon, 28 Mar 2016 14:56:30 +0800</pubDate>
+      
+      <guid>localhost:1313/post/technical/go%E7%9A%84%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E9%99%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
+      
+        <description>在程序执行的时候，很可能会遇到各种各样的问题，可能是内部的...</description>
+      
+    </item>
+    
+  </channel>
+</rss>

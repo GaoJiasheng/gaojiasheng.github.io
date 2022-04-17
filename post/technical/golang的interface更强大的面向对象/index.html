@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme=""
+  class="html"
+><head>
+  <title>
+    
+      Gavin Gao
+        |
+        Golang的Interface——更强大的面向对象
+
+
+      
+
+
+    
+  </title>
+
+  
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.97.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="Gavin Gao" />
+  <meta
+    name="description"
+    content="
+      Go语言中，是没有类这个概念的。但实际上，抽象却是无处不在的。
+
+
+    "
+  />
+  
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/scss/main.min.91c219aefcfd49429492d073fcd4c34c62824982e597c7b13c4ab8a60a651c3a.css"
+      integrity="sha256-kcIZrvz9SUKUktBz/NTDTGKCSYLll8exPEq4pgplHDo="
+      crossorigin="anonymous"
+      type="text/css"
+    />
+
+  
+
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.31b0a1f317f55c529a460897848c97436bb138b19c399b37de70d463a8bf6ed5.css"
+    integrity="sha256-MbCh8xf1XFKaRgiXhIyXQ2uxOLGcOZs33nDUY6i/btU="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.69685904d5c2a0c6258d03c207b778c10466edf6cea928cc0164c376b0ad0930.css"
+    integrity="sha256-aWhZBNXCoMYljQPCB7d4wQRm7fbOqSjMAWTDdrCtCTA="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.6d585e78d28cce1200d39fb133c92ed83df01738da721d0f48fb6eac62d24e04.css"
+    integrity="sha256-bVheeNKMzhIA05&#43;xM8ku2D3wFzjach0PSPturGLSTgQ="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.6b00d96498d59caa0dbcf9b49d30d821915291f2ceb0e19248523c8607ff43fa.css"
+    integrity="sha256-awDZZJjVnKoNvPm0nTDYIZFSkfLOsOGSSFI8hgf/Q/o="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+  <link rel="canonical" href="#ZgotmplZ" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.560a26330d27ff44a44e83b53cd07a95d4230a65930d31c5c76a8d481e5b35bf.js"
+      integrity="sha256-VgomMw0n/0SkToO1PNB6ldQjCmWTDTHFx2qNSB5bNb8="
+      crossorigin="anonymous"
+    ></script>
+
+  
+
+  
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Golang的Interface——更强大的面向对象"/>
+<meta name="twitter:description" content="Go语言中，是没有类这个概念的。但实际上，抽象却是无处不在的。"/>
+
+
+
+  
+  <meta property="og:title" content="Golang的Interface——更强大的面向对象" />
+<meta property="og:description" content="Go语言中，是没有类这个概念的。但实际上，抽象却是无处不在的。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="localhost:1313/post/technical/golang%E7%9A%84interface%E6%9B%B4%E5%BC%BA%E5%A4%A7%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2016-05-12T22:23:00+08:00" />
+<meta property="article:modified_time" content="2016-05-12T22:23:00+08:00" /><meta property="og:site_name" content="升升的笔记本" />
+
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "Golang的Interface——更强大的面向对象",
+        "headline": "Golang的Interface——更强大的面向对象",
+        "alternativeHeadline": "",
+        "description": "
+      Go语言中，是没有类这个概念的。但实际上，抽象却是无处不在的。
+
+
+    ",
+        "inLanguage": "utf-8",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "localhost:1313\/post\/technical\/golang%E7%9A%84interface%E6%9B%B4%E5%BC%BA%E5%A4%A7%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Gavin Gao"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Gavin Gao"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Gavin Gao"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Gavin Gao"
+        },
+        "copyrightYear" : "2016",
+        "dateCreated": "2016-05-12T22:23:00.00Z",
+        "datePublished": "2016-05-12T22:23:00.00Z",
+        "dateModified": "2016-05-12T22:23:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Gavin Gao",
+            "url": "localhost:1313",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "localhost:1313favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "localhost:1313\/post\/technical\/golang%E7%9A%84interface%E6%9B%B4%E5%BC%BA%E5%A4%A7%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1\/",
+        "wordCount" : "158",
+        "genre" : [ 
+      
+      "Golang心得"
+
+    ],
+        "keywords" : [ ]
+    }
+  </script>
+
+
+
+</head>
+<body
+    
+      class="body theme--light"
+
+    
+  >
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="/img/keep.jpg"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/">升升的笔记本</a>
+        </div>
+
+      
+      <div class="sidebar__introduction-description">
+        <p>路漫漫其修远兮，吾将上下而求索</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a href="https://github.com/GaoJiasheng" rel="me" aria-label="Github" title="Github">
+            <i class="fa-brands fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+        <li class="sidebar__list-item">
+          <a href="mailto:gaojiasheng.him@foxmail.com" rel="me" aria-label="e-mail" title="e-mail">
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+    </ul>
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Gavin Gao 2022
+
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9c062c557275acbaba71f0c7cd4024da3e3cc825d248bc4b2130811b0965330b.js"
+    integrity="sha256-nAYsVXJ1rLq6cfDHzUAk2j48yCXSSLxLITCBGwllMws="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        <li class="nav__list-item">
+          <a
+            
+            href="/"
+            
+            title=""
+            >Home</a
+          >
+        </li>
+
+      
+        
+        <li class="nav__list-item">
+          <a
+            
+            href="/post/"
+            
+            title=""
+            >时间线</a
+          >
+        </li>
+
+      
+        
+        <li class="nav__list-item">
+          <a
+            
+            href="/index/mycv/"
+            
+            title="关于我"
+            >关于我</a
+          >
+        </li>
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+
+    "
+  >
+    
+    <div class="post__content">
+      <h1>Golang的Interface——更强大的面向对象</h1>
+      
+        <ul class="post__meta">
+          <li class="post__meta-item">
+            <em class="fas fa-calendar-day post__meta-icon"></em>
+            <span class="post__meta-text"
+              >
+                Thu, May 12, 2016
+
+
+              
+            </span>
+          </li>
+          <li class="post__meta-item">
+            <em class="fas fa-stopwatch post__meta-icon"></em>
+            <span class="post__meta-text">One-minute read</span>
+          </li>
+        </ul>
+
+      <h3>Table of Contents</h3>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#interface是类的类">interface是“类的类”</a></li>
+    <li><a href="#从结构体开始讲起">从结构体开始讲起</a></li>
+    <li><a href="#结构体的类型interface">结构体的类型——interface</a></li>
+    <li><a href="#interface在go语言的一些应用">interface在Go语言的一些应用</a></li>
+    <li><a href="#如何知道interface中存的是什么类型">如何知道interface中存的是什么类型</a></li>
+  </ul>
+</nav><h2 id="interface是类的类">interface是“类的类”</h2>
+<p>Go语言中，是没有类这个概念的。但实际上，抽象却是无处不在的。
+对结构体的定义和继承、结构体方法的绑定。无处不暗示着Go语言对于<strong>面向对象</strong>原生的支持。</p>
+<p>类，是实体的抽象。将过程归纳成对实体的一个一个操作。
+而在我看来，Interface就是对类的<strong>归类</strong>。</p>
+<h2 id="从结构体开始讲起">从结构体开始讲起</h2>
+<p>Go语言的结构体，基本类似于其他语言的对象了。但是又不完全一样。</p>
+<p>其他语言的对象是一个大的聚合，其中包括成员和方法。
+而Go语言的实现对象，只是一个结构体，结构体中，只有成员。当然你可以给结构体绑定一系列的方法。但这一系列方法，却不归结构体所有。</p>
+<p>从实现和编程复杂度来讲，两种设计方式是差不多的。</p>
+<p>假设一个人是一个对象，他的主体当然是这个人所拥有的所有属性。你会觉得<strong>面试</strong>、<strong>唱歌</strong>、<strong>跳舞</strong>这种过程是属于一个人的一部分吗？这些只是一个人的表现而已。</p>
+<p>我个人理解，Go语言的结构体，更加贴近我们现实生活中的<strong>实体</strong>这个概念。</p>
+<h2 id="结构体的类型interface">结构体的类型——interface</h2>
+<p>如果仅仅是如上述所说，Go语言其实并没有特别突出的亮点。
+然而，当很多人接触Interface这个概念的时候，都会有“眼前一亮”的感觉。</p>
+<p>假设我要传一个变量给一个函数，但是我并不知道这个变量是什么类型的，函数只关心这个变量的一个Sing()方法，这个方法会返回一个字符串。传统的编程方法就有些乏力了。</p>
+<p>假设我们有三个类：分别是Person、Bird和Dog，所有的属性都不相同，但是有同一个方法是Sing()，现在我们想用同一个函数：GetLyrics()来处理三个不同的类。怎么办呢？</p>
+<pre><code>type Person struct {
+	Name string
+	Sex string
+	Telephone string
+}
+
+type Bird struct {
+	Color string
+	Size string
+	CanFly bool
+}
+
+type Dog struct {
+	Type string
+	Description string	
+}
+
+func (this Person) Sing() string {
+	return this.Name + this.Sex + this.Telephone
+}
+
+func (this Bird) Sing() string {
+	return this.Color + this.Size
+}
+
+func (this Dog) Sing() string {
+	return this.Type + this.Description
+}
+</code></pre>
+<p>如上，三个不同的结构体，然后我又同一个函数GetLyrics()，我想同时可以处理三个结构体，作为参数传给它。怎么办呢？
+那就是Interface了：</p>
+<pre><code>type AnimalCanSing interface {
+	Sing()string
+}
+</code></pre>
+<p>这样，我们就定义了一个AnimalCanSing类型，这个类型的变量，可以存储所有实现了Sing()方法的对象（结构体）。
+或者说，我们找到了一部分的结构体的共同特征，用来<strong>定义了这一类的结构体</strong>。</p>
+<pre><code>func GetLyrics(obj AnimalCanSing) {
+	fmt.Println(obj.Sing())
+}
+</code></pre>
+<p>上边这个方法，用interface做为参数，所有实现了Sing()方法的结构体，都可以作为参数传递给这个函数：</p>
+<pre><code>Frank := Dog{}
+Jerry := Person{}
+Bob := Bird{}
+
+GetLyrics(Frank)
+GetLyrics(Jerry)
+GetLyrics(Bob)
+</code></pre>
+<p>就是这样，是不是很神奇？</p>
+<h2 id="interface在go语言的一些应用">interface在Go语言的一些应用</h2>
+<p>空的interface（就是什么方法都不包含的interface），可以存储任意类型的值。有点类似于C语言的void *</p>
+<pre><code>var i interface{}
+a := 5
+s := &quot;I am a string&quot;
+b := Bird{}
+
+i = a
+i = s
+i = b
+</code></pre>
+<h2 id="如何知道interface中存的是什么类型">如何知道interface中存的是什么类型</h2>
+<p>interface可以存很多的类型，但是当我们想要知道它存的到底是哪个类型的时候应该怎么办呢？
+那就是使用Comma-ok断言：</p>
+<p>这个语法是Go语言的语法，可以直接判断是否是该类型的变量：</p>
+<pre><code>if _, ok := i.(int); ok {
+	fmt.Println(&quot;i is int type&quot;)
+}
+</code></pre>
+<p>太简单了，就不仔细讲了。</p>
+<p>interface其实很简单，也很好玩，是很tricky的一个特性。</p>
+</div>
+    <div class="post__footer">
+      
+        <span><a class="category" href="/categories/golang%E5%BF%83%E5%BE%97/">Golang心得</a></span>
+
+
+
+
+      
+
+      
+    </div>
+
+    
+  </div>
+
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Gavin Gao 2022
+
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9c062c557275acbaba71f0c7cd4024da3e3cc825d248bc4b2130811b0965330b.js"
+    integrity="sha256-nAYsVXJ1rLq6cfDHzUAk2j48yCXSSLxLITCBGwllMws="
+    crossorigin="anonymous"
+  ></script></body>
+</html>
