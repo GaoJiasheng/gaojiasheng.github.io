@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Index-depracateds on 升升说</title>
+    <link>https://blog.gavingao.cn/index-depracated/</link>
+    <description>Recent content in Index-depracateds on 升升说</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>utf-8</language>
+    <lastBuildDate>Sat, 29 Aug 2015 12:59:16 +0800</lastBuildDate><atom:link href="https://blog.gavingao.cn/index-depracated/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>人生</title>
+      <link>https://blog.gavingao.cn/index-depracated/life/</link>
+      <pubDate>Sat, 29 Aug 2015 12:59:16 +0800</pubDate>
+      
+      <guid>https://blog.gavingao.cn/index-depracated/life/</guid>
+      
+        <description>26岁的迷茫 &amp;mdash;&amp;mdash; 2018-10-18 1509公里的爱情 &amp;mdash;&amp;mdash; 2013-4-18 深夜随想 &amp;mdash;&amp;mdash; 2011-9-19 孙彦飞老师给小位的悼念 &amp;mdash;&amp;mdash; 2010-12-3 已逝的丰腴 &amp;mdash;&amp;mdash; 2010-11-3 浅浅的活着 &amp;mdash;&amp;mdash; 2010-7-29 </description>
+      
+    </item>
+    
+    <item>
+      <title>关于我</title>
+      <link>https://blog.gavingao.cn/index-depracated/mycv/</link>
+      <pubDate>Sat, 29 Aug 2015 12:59:16 +0800</pubDate>
+      
+      <guid>https://blog.gavingao.cn/index-depracated/mycv/</guid>
+      
+        <description>个人简介：  程序员，运维开发 关注自动化运维平台构建 会一点C、Go、Python、JS Dota爱好者 宋词爱好者  社交账号:  GitHub : GaoJiasheng QQ : 835875804 Mail : gaojiasheng.</description>
+      
+    </item>
+    
+    <item>
+      <title>技术</title>
+      <link>https://blog.gavingao.cn/index-depracated/develop/</link>
+      <pubDate>Sat, 29 Aug 2015 12:59:16 +0800</pubDate>
+      
+      <guid>https://blog.gavingao.cn/index-depracated/develop/</guid>
+      
+        <description>对运维开发工作的一些思考 &amp;mdash;&amp;mdash; 2018-04-01 服务树——灵活强大的运维资源管理体系 &amp;mdash;&amp;mdash; 2018-7-27 运维监控系统专题(一)：浅谈数据采集 &amp;mdash;&amp;mdash; 2018-10-22 Falcon-Graph扩容二三事 &amp;mdash;&amp;mdash; 2017-9-16 python伪终端编程——实时、全量抓取终端输出流 &amp;mdash;&amp;mdash; 2016-08-03 Go的异常处理（附最佳实践） &amp;mdash;&amp;mdash; 2016-3-28 python的迭代器与生成器 &amp;mdash;&amp;mdash; 2015-11-27 深度学习python装饰器 &amp;mdash;&amp;mdash; 2015-11-18 golang的interface——更强大的面向对象 &amp;mdash;&amp;mdash; 2015-11-18 开源项目agent-updater源码阅读 &amp;mdash;&amp;mdash; 2015-9-28 </description>
+      
+    </item>
+    
+  </channel>
+</rss>

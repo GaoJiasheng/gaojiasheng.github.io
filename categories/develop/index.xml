@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>develop on 升升的笔记本</title>
+    <title>develop on 升升说</title>
     <link>https://blog.gavingao.cn/categories/develop/</link>
-    <description>Recent content in develop on 升升的笔记本</description>
+    <description>Recent content in develop on 升升说</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>utf-8</language>
     <lastBuildDate>Sat, 29 Aug 2015 12:59:16 +0800</lastBuildDate><atom:link href="https://blog.gavingao.cn/categories/develop/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>技术</title>
-      <link>https://blog.gavingao.cn/index/develop/</link>
+      <link>https://blog.gavingao.cn/index-depracated/develop/</link>
       <pubDate>Sat, 29 Aug 2015 12:59:16 +0800</pubDate>
       
-      <guid>https://blog.gavingao.cn/index/develop/</guid>
+      <guid>https://blog.gavingao.cn/index-depracated/develop/</guid>
       
         <description>对运维开发工作的一些思考 &amp;mdash;&amp;mdash; 2018-04-01 服务树——灵活强大的运维资源管理体系 &amp;mdash;&amp;mdash; 2018-7-27 运维监控系统专题(一)：浅谈数据采集 &amp;mdash;&amp;mdash; 2018-10-22 Falcon-Graph扩容二三事 &amp;mdash;&amp;mdash; 2017-9-16 python伪终端编程——实时、全量抓取终端输出流 &amp;mdash;&amp;mdash; 2016-08-03 Go的异常处理（附最佳实践） &amp;mdash;&amp;mdash; 2016-3-28 python的迭代器与生成器 &amp;mdash;&amp;mdash; 2015-11-27 深度学习python装饰器 &amp;mdash;&amp;mdash; 2015-11-18 golang的interface——更强大的面向对象 &amp;mdash;&amp;mdash; 2015-11-18 开源项目agent-updater源码阅读 &amp;mdash;&amp;mdash; 2015-9-28 </description>
       
