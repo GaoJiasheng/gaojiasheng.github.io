@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Python大法 on </title>
-    <link>localhost:1313/categories/python%E5%A4%A7%E6%B3%95/</link>
-    <description>Recent content in Python大法 on </description>
+    <title>Python大法 on 升升的笔记本</title>
+    <link>https://blog.gavingao.cn/categories/python%E5%A4%A7%E6%B3%95/</link>
+    <description>Recent content in Python大法 on 升升的笔记本</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>utf-8</language>
-    <lastBuildDate>Fri, 27 Nov 2015 21:30:30 +0800</lastBuildDate><atom:link href="localhost:1313/categories/python%E5%A4%A7%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 27 Nov 2015 21:30:30 +0800</lastBuildDate><atom:link href="https://blog.gavingao.cn/categories/python%E5%A4%A7%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>python的迭代器与生成器</title>
-      <link>localhost:1313/post/technical/python%E7%9A%84%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8/</link>
+      <link>https://blog.gavingao.cn/post/technical/python%E7%9A%84%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8/</link>
       <pubDate>Fri, 27 Nov 2015 21:30:30 +0800</pubDate>
       
-      <guid>localhost:1313/post/technical/python%E7%9A%84%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8/</guid>
+      <guid>https://blog.gavingao.cn/post/technical/python%E7%9A%84%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8/</guid>
       
         <description>网上介绍迭代器的文章，都用fibonacci数列举例子，我们也用这个举例子吧。</description>
       
@@ -20,10 +20,10 @@
     
     <item>
       <title>深度学习python装饰器</title>
-      <link>localhost:1313/post/technical/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0python%E8%A3%85%E9%A5%B0%E5%99%A8/</link>
+      <link>https://blog.gavingao.cn/post/technical/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0python%E8%A3%85%E9%A5%B0%E5%99%A8/</link>
       <pubDate>Wed, 18 Nov 2015 21:30:30 +0800</pubDate>
       
-      <guid>localhost:1313/post/technical/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0python%E8%A3%85%E9%A5%B0%E5%99%A8/</guid>
+      <guid>https://blog.gavingao.cn/post/technical/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0python%E8%A3%85%E9%A5%B0%E5%99%A8/</guid>
       
         <description>Python装饰器是个很好玩的东西，让我们一步一步来了解这个东西...</description>
       
