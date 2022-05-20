@@ -2,7 +2,7 @@
 <html
   dir="ltr"
   lang="en"
-  data-theme="dark"
+  data-theme=""
   class="html"
 ><head>
   <title>
@@ -24,7 +24,7 @@
   <meta
     name="description"
     content="
-      监控系统是整个运维环节，乃至整个产品生命周期中最重要的一环。而Open-Falcon是目前业界做的最开放、最好用的互联网企业级监控产品。
+      路漫漫其修远兮，吾将上下而求索
 
 
     "
@@ -113,17 +113,17 @@
   
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Falcon-Graph扩容二三事"/>
-<meta name="twitter:description" content="监控系统是整个运维环节，乃至整个产品生命周期中最重要的一环。而Open-Falcon是目前业界做的最开放、最好用的互联网企业级监控产品。"/>
+<meta name="twitter:description" content="前言 监控系统是整个运维环节，乃至整个产品生命周期中最重要的一环。而Open-Falcon是目前业界做的最开放、最好用的互联网企业级监控产品。 Open-Falcon的底层存储，使用RRDTool时间序列数据库。在Transfer &amp; Query模块，使用一致性哈希来对数据做均匀的分片。完美的满足了海量数据的存储以及高效、快速的查询。 然而当存储、IO、或者某一方面资源到达瓶颈的时候，我们的存储组件就需要通过扩容来继续满足使用的压力及需求。 本篇文章就将我们扩容的经验及过程分享给大家。"/>
 
 
 
   
   <meta property="og:title" content="Falcon-Graph扩容二三事" />
-<meta property="og:description" content="监控系统是整个运维环节，乃至整个产品生命周期中最重要的一环。而Open-Falcon是目前业界做的最开放、最好用的互联网企业级监控产品。" />
+<meta property="og:description" content="前言 监控系统是整个运维环节，乃至整个产品生命周期中最重要的一环。而Open-Falcon是目前业界做的最开放、最好用的互联网企业级监控产品。 Open-Falcon的底层存储，使用RRDTool时间序列数据库。在Transfer &amp; Query模块，使用一致性哈希来对数据做均匀的分片。完美的满足了海量数据的存储以及高效、快速的查询。 然而当存储、IO、或者某一方面资源到达瓶颈的时候，我们的存储组件就需要通过扩容来继续满足使用的压力及需求。 本篇文章就将我们扩容的经验及过程分享给大家。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.gavingao.cn/post/technical/falcon-graph%E6%89%A9%E5%AE%B9%E4%BA%8C%E4%B8%89%E4%BA%8B/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2017-09-16T15:08:30+08:00" />
-<meta property="article:modified_time" content="2017-09-16T15:08:30+08:00" /><meta property="og:site_name" content="升升说" />
+<meta property="article:published_time" content="2017-09-16T00:00:00+08:00" />
+<meta property="article:modified_time" content="2017-09-16T00:00:00+08:00" /><meta property="og:site_name" content="升升说" />
 
 
 
@@ -141,7 +141,11 @@
         "headline": "Falcon-Graph扩容二三事",
         "alternativeHeadline": "",
         "description": "
-      监控系统是整个运维环节，乃至整个产品生命周期中最重要的一环。而Open-Falcon是目前业界做的最开放、最好用的互联网企业级监控产品。
+      
+        前言 监控系统是整个运维环节，乃至整个产品生命周期中最重要的一环。而Open-Falcon是目前业界做的最开放、最好用的互联网企业级监控产品。 Open-Falcon的底层存储，使用RRDTool时间序列数据库。在Transfer \u0026amp; Query模块，使用一致性哈希来对数据做均匀的分片。完美的满足了海量数据的存储以及高效、快速的查询。 然而当存储、IO、或者某一方面资源到达瓶颈的时候，我们的存储组件就需要通过扩容来继续满足使用的压力及需求。 本篇文章就将我们扩容的经验及过程分享给大家。
+
+
+      
 
 
     ",
@@ -168,9 +172,9 @@
             "name": "Gavin Gao"
         },
         "copyrightYear" : "2017",
-        "dateCreated": "2017-09-16T15:08:30.00Z",
-        "datePublished": "2017-09-16T15:08:30.00Z",
-        "dateModified": "2017-09-16T15:08:30.00Z",
+        "dateCreated": "2017-09-16T00:00:00.00Z",
+        "datePublished": "2017-09-16T00:00:00.00Z",
+        "dateModified": "2017-09-16T00:00:00.00Z",
         "publisher":{
             "@type":"Organization",
             "name": "Gavin Gao",
@@ -188,7 +192,7 @@
 
     ,
         "url" : "https:\/\/blog.gavingao.cn\/post\/technical\/falcon-graph%E6%89%A9%E5%AE%B9%E4%BA%8C%E4%B8%89%E4%BA%8B\/",
-        "wordCount" : "4",
+        "wordCount" : "98",
         "genre" : [ 
       
       "技术"
@@ -203,7 +207,7 @@
 </head>
 <body
     
-      class="body theme--dark"
+      class="body theme--light"
 
     
   >
@@ -391,11 +395,6 @@
     "
   >
     
-      <div class="post__thumbnail-wrapper">
-        <img class="post__thumbnail" src="/img/purple.jpg" alt="Thumbnail image" />
-      </div>
-
-    
     <div class="post__content">
       <h1>Falcon-Graph扩容二三事</h1>
       
@@ -416,8 +415,117 @@
           </li>
         </ul>
 
-      <p>监控系统是整个运维环节，乃至整个产品生命周期中最重要的一环。而Open-Falcon是目前业界做的最开放、最好用的互联网企业级监控产品&hellip;</p>
-<p><a href="http://www.jianshu.com/p/a87ab10e09c7">全文地址 : http://www.jianshu.com/p/a87ab10e09c7 </a></p>
+      <h2 id="前言">前言</h2>
+<p>监控系统是整个运维环节，乃至整个产品生命周期中最重要的一环。而Open-Falcon是目前业界做的最开放、最好用的互联网企业级监控产品。
+Open-Falcon的底层存储，使用RRDTool时间序列数据库。在Transfer &amp; Query模块，使用一致性哈希来对数据做均匀的分片。完美的满足了海量数据的存储以及高效、快速的查询。
+然而当存储、IO、或者某一方面资源到达瓶颈的时候，我们的存储组件就需要通过扩容来继续满足使用的压力及需求。
+本篇文章就将我们扩容的经验及过程分享给大家。</p>
+<h2 id="本文面向对象">本文面向对象</h2>
+<pre tabindex="0"><code> 1、Open-Falcon老鸟，但是没有经历过存储扩容，准备扩容的人。
+ 2、眼一闭、一睁，啥也没管，就扩容完成了，心里还是有一点懵逼的人。
+</code></pre><h2 id="方案原理">方案原理</h2>
+<p>本篇文章不讨论代码细节，这里对应<strong>扩容步骤</strong>简单给大家讲下原理。
+从修改transfer开始，流量会按哈希规则进入到<strong>原始集群</strong>和<strong>扩容集群</strong>。
+此时<strong>扩容集群</strong>发现，migrate开关是打开状态。
+于是，<strong>扩容集群</strong>接收到流量之后，并没有很着急的去落盘，而是先Trans一份给老的集群。同时会尝试从<strong>原始集群</strong>中拉取RRD文件。拉取成功，则落盘。拉取不成功，等待超时再落盘。
+同样的，Query的查询，也是按照哈希规则。到了<strong>扩容集群</strong>的查询，如果Graph发现，本地已有RRD文件，则直接查询返回。如果本地无RRD文件，则Graph会通过老的哈希关系，去<strong>原始集群</strong>中拉取到旧数据，然后跟自己cache中的数据做一个聚合，然后返回给查询者。
+整个过程从技术上来说，可以说是：<strong>无损的</strong>、<strong>可以热迁移</strong>。</p>
+<h2 id="方案缺陷">方案缺陷</h2>
+<p>整个方案，经过我们测试，比较稳定。但仍有如下缺点：</p>
+<blockquote>
+<p>1、无回滚方案。开弓没有回头箭。一旦扩容失败，会导致扩容期间部分数据丢失。
+2、自监控不完善。官方提供给我们的统计数据，只有迁移的成功、失败的数量等较少几个指标，在扩容过程中，很可能会导致操作者不能完全掌控扩容的详细情况。</p>
+</blockquote>
+<h2 id="扩容前我们做了哪些准备">扩容前，我们做了哪些准备</h2>
+<p>在扩容之前，由于此方案容错率较低，可以提前做一些准备，保证第一时间可以发现问题的所在：</p>
+<h4 id="补全自监控">补全自监控</h4>
+<blockquote>
+<p>【写】Transfer接收点数（实际扩容并不会影响这个数值，主要用于比较）
+【写】Transfer转发点数
+【写】Graph接收点数
+【写】<strong>扩容集群</strong>Trans数据到老集群点数
+【读】Query到Graph查询总次数
+【读】Graph转发查询的次数、耗时、错误率
+【迁移】迁移的成功个数/成功率，失败个数/失败率，迁移延迟</p>
+</blockquote>
+<h4 id="功能测试">功能测试</h4>
+<p>很多公司都对开源版本的Graph进行了一些修改和定制。很可能会对这个过程有影响，之前笔者公司，对内存进行过优化，存储在内存中的数据格式有所变化。但是migrate时，哈希规则的计算正好依赖此数据。导致graph扩容时计算出来的的哈希值，与Transfer不一致，最终导致丢掉了一部分数据。
+因此，在真正的扩容前，针对自己的公司Graph版本，进行一个准确性测试，是很有必要的。</p>
+<h4 id="压力测试">压力测试</h4>
+<p>不同的公司，监控系统会有不同的量级和使用瓶颈。一般来讲，监控系统都是写入量大，查询量少。但是笔者所在的公司，由于重构了Judge，改原有的<strong>Transfer推送</strong>方式为<strong>Judge自行拉取</strong>。导致查询的量非常大，基本可以达到读写比 1：1的量级。
+因此，在真正的扩容之前，进行一个与自己线上环境相符的压力测试，也是很有必要的。</p>
+<p>跟大家分享下我们的压测结果：
+测试环境：CentOS 7.2
+内存：8 * 16G
+硬盘：3.2TB Nvme SSD
+扩容台数：2台 =&gt; 4台
+压测过程中：<strong>单机</strong>持续写入<strong>130万点/秒</strong>，持续查询<strong>100W点/秒</strong></p>
+<figure class="medium"><img src="/img/blog/2017-falcon-graph-expansion/1.png"
+         alt="image"/>
+</figure>
+
+<p>压测结论，各项指标正常，各项资源使用并没有明显增加。
+concurrency的提高，并没有对扩容效率带来明显的提升。
+但也从侧面证实了，<strong>此扩容方案，在读写比1:1的情况下，可以完美热扩容</strong>。</p>
+<p>##扩容过程
+####分批扩容</p>
+<blockquote>
+<p>30台 =&gt; 31台 （灰度1台）
+31台 =&gt; 33台 （再小流量2台）
+33台 =&gt; 38台 （再中流量5台）
+38台 =&gt; 50台 （全量）</p>
+</blockquote>
+<p>####扩容过程观察的指标</p>
+<blockquote>
+<p>【基础指标】老集群和扩容集群的内存和IO情况
+【写入链路】Transfer接收点数、Transfer转发点数、Graph接收点数
+【查询链路】Query到Graph查询的次数、错误率、延迟。Graph转发查询的次数。
+【迁移效果】RRD文件的迁移量、成功率、迁移时间。</p>
+</blockquote>
+<p>####扩容过程中指标变化
+每次扩容，都严格遵守扩容步骤，观察所有性能指标及数据的稳定性，并没有出现严重的断层及数据异常。下面将我们多次扩容的性能及指标数据分享给大家：</p>
+<p><em>所有concurrency配置为:5</em>
+<figure class="medium"><img src="/img/blog/2017-falcon-graph-expansion/2.png"
+         alt="image"/>
+</figure>
+
+<em>说明1：此处主要说明性能上限，IO及内存的值，均为峰值</em>
+<em>说明2：由于笔者公司的监控系统持续有新指标的写入，因此<strong>迁移指标稳定时间</strong>这个值，对<strong>开源版Graph</strong>无太大参考意义</em></p>
+<p>####如何确保扩容完成</p>
+<blockquote>
+<p>1、Graph接受指标总量稳定，且与Transfer转发指标数持平
+2、所有查询量没有跌，且所有查询错误率稳定
+3、迁移RRD文件数及迁移效率，逐渐稳定。趋于0或一个固定的值。（若无新指标，会趋于0）
+4、找N个确定会落在扩容集群上的指标，确定这N条线的数据，连续且并没有断开。</p>
+</blockquote>
+<p>##需注意的点
+####重启有害
+扩容过程中，没有完成RRD文件迁移之前，<strong>扩容集群重启</strong>就意味着<strong>扩容失败</strong>：
+重启时，内存中的数据会被强制落盘，导致未迁移完成的RRD文件无法再次迁移。</p>
+<p>####建议分批扩容
+由于此方案无法回滚，对于数据敏感的场景，建议考虑分批次扩容。
+此次扩容过程中，我们就采用了分批次扩容的方案。先灰度一台，再小流量2台、3台、5台，直至最终完全上线。
+实际证明，分批次扩容是完全可行、安全，可以降低风险的。</p>
+<p>##总结
+总而言之，这个方案是<strong>可行、稳定、可操作</strong>的。只要做好事前准备，对扩容过程了解到位，可以很容易扩容成功。</p>
+<hr>
+<p>##附：扩容中的指标变化情况
+<figure class="medium"><img src="/img/blog/2017-falcon-graph-expansion/3.png"
+         alt="image"/>
+</figure>
+
+<figure class="medium"><img src="/img/blog/2017-falcon-graph-expansion/4.png"
+         alt="image"/>
+</figure>
+
+<figure class="medium"><img src="/img/blog/2017-falcon-graph-expansion/5.png"
+         alt="image"/>
+</figure>
+
+<figure class="medium"><img src="/img/blog/2017-falcon-graph-expansion/6.png"
+         alt="image"/>
+</figure>
+</p>
 
 
 </div>

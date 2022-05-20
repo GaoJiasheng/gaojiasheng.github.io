@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme=""
+  class="html"
+><head>
+  <title>
+    
+      Gavin Gao
+        |
+        基础监控系统建设
+
+
+      
+
+
+    
+  </title>
+
+  
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.97.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="Gavin Gao" />
+  <meta
+    name="description"
+    content="
+      路漫漫其修远兮，吾将上下而求索
+
+
+    "
+  />
+  
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/scss/main.min.0891fd15be02aec56b4f3be63f0b4c2f373c595dbc0e30bed960ea94fa540e2a.css"
+      integrity="sha256-CJH9Fb4CrsVrTzvmPwtMLzc8WV28DjC&#43;2WDqlPpUDio="
+      crossorigin="anonymous"
+      type="text/css"
+    />
+
+  
+
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.31b0a1f317f55c529a460897848c97436bb138b19c399b37de70d463a8bf6ed5.css"
+    integrity="sha256-MbCh8xf1XFKaRgiXhIyXQ2uxOLGcOZs33nDUY6i/btU="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.b1c4e6a10bdbab01f33fff9d78816ee68cf9a9a731f07668afd546a79924cb80.css"
+    integrity="sha256-scTmoQvbqwHzP/&#43;deIFu5oz5qacx8HZor9VGp5kky4A="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.423dee17c62f55fa733a4ee13e00d523dfce88cc4f4ab4549a24ba36bd9de681.css"
+    integrity="sha256-Qj3uF8YvVfpzOk7hPgDVI9/OiMxPSrRUmiS6Nr2d5oE="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.b7d54133b27e5b4de15245b8e143de3e8ed2d674c706137274cedc9953f31917.css"
+    integrity="sha256-t9VBM7J&#43;W03hUkW44UPePo7S1nTHBhNydM7cmVPzGRc="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+
+  <link rel="canonical" href="https://blog.gavingao.cn/post/technical/%E5%9F%BA%E7%A1%80%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E5%BB%BA%E8%AE%BE/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.560a26330d27ff44a44e83b53cd07a95d4230a65930d31c5c76a8d481e5b35bf.js"
+      integrity="sha256-VgomMw0n/0SkToO1PNB6ldQjCmWTDTHFx2qNSB5bNb8="
+      crossorigin="anonymous"
+    ></script>
+
+  
+
+  
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="基础监控系统建设"/>
+<meta name="twitter:description" content="监控，是运维的眼睛，是稳定性建设中最重要的一环。"/>
+
+
+
+  
+  <meta property="og:title" content="基础监控系统建设" />
+<meta property="og:description" content="监控，是运维的眼睛，是稳定性建设中最重要的一环。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.gavingao.cn/post/technical/%E5%9F%BA%E7%A1%80%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E5%BB%BA%E8%AE%BE/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2018-11-09T22:23:00+08:00" />
+<meta property="article:modified_time" content="2018-11-09T22:23:00+08:00" /><meta property="og:site_name" content="升升说" />
+
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "基础监控系统建设",
+        "headline": "基础监控系统建设",
+        "alternativeHeadline": "",
+        "description": "
+      
+        监控，是运维的眼睛，是稳定性建设中最重要的一环。
+
+
+      
+
+
+    ",
+        "inLanguage": "utf-8",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/blog.gavingao.cn\/post\/technical\/%E5%9F%BA%E7%A1%80%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E5%BB%BA%E8%AE%BE\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Gavin Gao"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Gavin Gao"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Gavin Gao"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Gavin Gao"
+        },
+        "copyrightYear" : "2018",
+        "dateCreated": "2018-11-09T22:23:00.00Z",
+        "datePublished": "2018-11-09T22:23:00.00Z",
+        "dateModified": "2018-11-09T22:23:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Gavin Gao",
+            "url": "https://blog.gavingao.cn",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/blog.gavingao.cn\/favicons\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "https:\/\/blog.gavingao.cn\/post\/technical\/%E5%9F%BA%E7%A1%80%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E5%BB%BA%E8%AE%BE\/",
+        "wordCount" : "74",
+        "genre" : [ 
+      
+      "技术"
+
+    ],
+        "keywords" : [ ]
+    }
+  </script>
+
+
+
+</head>
+<body
+    
+      class="body theme--light"
+
+    
+  >
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="/img/keep.jpg"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/">升升说</a>
+        </div>
+
+      
+      <div class="sidebar__introduction-description">
+        <p>路漫漫其修远兮，吾将上下而求索</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://github.com/GaoJiasheng"
+            target="_blank"
+            rel="noopener"
+            aria-label="Github"
+            title="Github"
+          >
+            <i class="fa-brands fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+        <li class="sidebar__list-item">
+          <a
+            href="mailto:gaojiasheng.him@foxmail.com"
+            target="_blank"
+            rel="noopener"
+            aria-label="e-mail"
+            title="e-mail"
+          >
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://twitter.com/gaojiashenghim"
+            target="_blank"
+            rel="noopener"
+            aria-label="twitter"
+            title="twitter"
+          >
+            <i class="fa-brands fa-twitter fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+    </ul>
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Gavin Gao 2022
+
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9c062c557275acbaba71f0c7cd4024da3e3cc825d248bc4b2130811b0965330b.js"
+    integrity="sha256-nAYsVXJ1rLq6cfDHzUAk2j48yCXSSLxLITCBGwllMws="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            <a
+              
+              href="/"
+              
+              title=""
+              >Home</a
+            >
+          </li>
+
+        
+
+
+      
+        
+        
+          <li class="nav__list-item">
+            <a
+              
+              href="/post/"
+              
+              title=""
+              >时间线</a
+            >
+          </li>
+
+        
+
+
+      
+        
+        
+          <li class="nav__list-item">
+            <a
+              
+              href="/index-depracated/mycv/"
+              
+              title="关于我"
+              >关于我</a
+            >
+          </li>
+
+        
+
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+
+    "
+  >
+    
+    <div class="post__content">
+      <h1>基础监控系统建设</h1>
+      
+        <ul class="post__meta">
+          <li class="post__meta-item">
+            <em class="fas fa-calendar-day post__meta-icon"></em>
+            <span class="post__meta-text"
+              >
+                Nov 9, 2018
+
+
+              
+            </span>
+          </li>
+          <li class="post__meta-item">
+            <em class="fas fa-stopwatch post__meta-icon"></em>
+            <span class="post__meta-text">One-minute read</span>
+          </li>
+        </ul>
+
+      <p>监控，是运维的眼睛，是稳定性建设中最重要的一环。</p>
+<p>一般来讲，基础监控系统的主要功能就是<strong>发现问题</strong>。</p>
+<p>故障发生前，通过监控的看图巡检，发现隐患；故障发生时，通过实时的告警，快速发现问题，定位问题所在；故障发生后，使用过去的历史数据图表，进行事后复盘，避免下次发生。</p>
+<p>本篇文章，我们不讨论根因定位、故障自愈之类的高端的主题，只跟大家聊一下笔者关于<strong>基础监控系统</strong>的一些建设心得。</p>
+<h2 id="一般监控系统的功能">一般监控系统的功能</h2>
+<p>一般的基础监控系统，主要有<strong>看图</strong>和<strong>告警</strong>两大功能，通过这两大功能，满足上述的<code>发现问题</code>的需求。
+<figure class="medium"><img src="/img/blog/2018-basic-monitoring/1.png"
+         alt="image"/>
+</figure>
+
+<figure class="medium"><img src="/img/blog/2018-basic-monitoring/2.png"
+         alt="image"/>
+</figure>
+</p>
+<p>看图的功能，在看单张图的基础上，大部分监控系统会定制一个<strong>监控大盘</strong>的功能，将多张定义好的监控图，放在一个页面，记录一个URL，每次只要打开这个URL，就能看到自己定义好的所有监控图。</p>
+<figure class="medium"><img src="/img/blog/2018-basic-monitoring/3.png"
+         alt="image"/>
+</figure>
+
+<p><strong>监控大盘</strong>主要适合<code>运维定时巡检</code>的场景。比方说，运维同学，把所有业务的核心指标都放在一个监控大盘里。每天早上，只要打开这个页面，就可以看到自己业务最核心指标的情况，流量变化、稳定性隐患，一目了然。</p>
+<h2 id="监控系统模块拆解">监控系统模块拆解</h2>
+<figure class="medium"><img src="/img/blog/2018-basic-monitoring/4.png"
+         alt="image"/>
+</figure>
+
+<p>我们以open-falcon架构图为例，其实这张图看起来复杂，拆解起来却很简单。</p>
+<p>绿色的实线，是数据的上报流；橙色的虚线，是策略的分发流；蓝色的虚线，是看图的数据流。</p>
+<figure class="medium"><img src="/img/blog/2018-basic-monitoring/5.png"
+         alt="image"/>
+</figure>
+
+<p>整体来看，一般的监控系统分为四部分：</p>
+<ul>
+<li>
+<p><strong>采集</strong>：对应open-falcon的agent以及App library</p>
+</li>
+<li>
+<p><strong>存储</strong>：对应open-falcon的transfer、Query和graph</p>
+</li>
+<li>
+<p><strong>告警</strong>：对应open-falcon的Judge、Alarm</p>
+</li>
+<li>
+<p><strong>绘图</strong>：对应open-falcon的Dashboard</p>
+</li>
+</ul>
+<h2 id="数据采集的原则">数据采集的原则</h2>
+<p>数据采集，说起来比较简单，只要把数据报上来就行，具体怎么采集，那就八仙过海各显神通了。</p>
+<p>但是我们作为平台的设计者，必须要考虑标准化与规范化。</p>
+<p>标准化，即抽象出统一的数据模型，用以支持各种自定义的采集数据。</p>
+<figure class="small"><img src="/img/blog/2018-basic-monitoring/6.png"
+         alt="image"/>
+</figure>
+
+<p>这里值得一提的是，确定统一的数据模型，非但不会影响各种自定义的采集需求，反而能更灵活的支撑各种自定义的需求。</p>
+<figure class="medium"><img src="/img/blog/2018-basic-monitoring/7.png"
+         alt="image"/>
+</figure>
+
+<p>另一个需要注意的，就是<strong>采集方式的标准化</strong>。</p>
+<p>我们采集端口、进程、日志、流量的各方面数据的方式，这个做好标准之后，监控的数据就会很规范。</p>
+<p>我们在一个业务线所做的稳定性建设方案，就可以无缝地迁移到另一个业务线，无需重复造轮子，而且是摸索很久之后的最佳实践。</p>
+<h2 id="存储建设的关键点">存储建设的关键点</h2>
+<p>存储的建设，我觉得很重要的有三点：</p>
+<ul>
+<li><strong>功能</strong></li>
+</ul>
+<p>从功能上来讲，数据的存储比较简单，只要能存取时间序列数据即可，这一点，业界所有的时序数据库都可以做到。</p>
+<p>但是，高端的绘图能力和强大的告警能力，大都会依赖<strong>动态的tag关联补全</strong>，这个索引能力要根据设计的功能来酌情建设。</p>
+<p>open-falcon的索引是放在MySQL里的，而且数据结构比较固定，在这方面的能力还有待加强。</p>
+<p>笔者公司为了满足需求，是自建了一套索引模块的。</p>
+<ul>
+<li><strong>性能</strong></li>
+</ul>
+<p>一般来讲，我们自己建设一套时间序列存储，成本还是很高的。因此对于大多数同学来说，大家经历的都是<strong>时间序列数据库的选择</strong>。</p>
+<p>大家在选择合适的时序数据库时，在性能上主要要考虑两点：</p>
+<p>一是数据的读写性能，尤其是并发读写时的性能，在建设之初，要做好压测和QPS的容量规划。</p>
+<p>二是监控的时序数据必须要做好<strong>降采样</strong>，也就是数据的定时归档。将过去一段时间的N个点，聚合成一个粗时间粒度的点。这里要注意，千万不要做定时任务，InfluxDB的定时降采样会带来非常大的CPU高峰，对于要应对高并发查询和写入的监控存储来说，这种性能的潮汐是非常危险的。</p>
+<p>降采样这一点，Open-Falcon底层的RRDTool技术就非常优秀，采用的是<code>写时降采样</code>，数据点在写入的过程中，降采样已经做好了，虽然会一定程度上带来一点性能消耗，但不会出现性能的瓶颈。</p>
+<ul>
+<li><strong>容量</strong></li>
+</ul>
+<p>无论什么样的存储，无论效率和压缩比有多高，总是会满的。这种时候，扩展就变成了一个绕不过去的命题。</p>
+<p>关于容量方面，要强调的是，必须要有<strong>分布式的架构</strong>，可以随时扩容。</p>
+<h2 id="绘图功能的考量">绘图功能的考量</h2>
+<p>绘图功能的定制，因人和业务而异。从笔者公司的建设经验来看，给大家三条建议：</p>
+<figure class="medium"><img src="/img/blog/2018-basic-monitoring/8.png"
+         alt="image"/>
+</figure>
+
+<ul>
+<li><strong>与资源管理（服务树系统）打通</strong></li>
+</ul>
+<p>监控系统，看的是机器的资源与运行的服务情况。</p>
+<p>资源管理，管理的是资源的归属情况。</p>
+<p>因此，通过资源管理树，快速筛选出机器列表，进而一键查看监控图，可能是每个公司都会有的需求。</p>
+<figure class="medium"><img src="/img/blog/2018-basic-monitoring/9.png"
+         alt="image"/>
+</figure>
+
+<ul>
+<li><strong>数据横向的比较</strong></li>
+</ul>
+<p>在一张监控图中，同时显示当前与一段时间的环比，是发现问题的一种非常好的手段。</p>
+<p>如上图，绿线代表<strong>今天</strong>的数据情况，蓝线代表<strong>一天前</strong>，红线代表<strong>7天前</strong>，通过对趋势的比较，可以很容易把握住服务的状态，哪里出问题一目了然。</p>
+<ul>
+<li><strong>数据纵向的聚合</strong></li>
+</ul>
+<p>假设我有一个节点，下有十台机器，我显示这十台机器的情况，就要有十条曲线。但我现在想要看一个整个节点的总体情况，那曲线的聚合，就必不可少了。</p>
+<p>可以通过将多条曲线，同一时刻的数据相加或者求平均，来进行数据的聚合，用以体现出一个总体的情况。</p>
+<h2 id="如何让报警能力更加强大">如何让报警能力更加强大</h2>
+<p>告警一般来讲，需要两部分数据，一部分是配置数据，一部分是监控数据。</p>
+<p>报警配置的获取，见仁见智吧，不涉及性能问题，可以通过队列来通知，也可以定时拉取，只要保证好一致性和实时性就好了。</p>
+<p>监控数据的获取，一般来讲，分为“推”和“拉”两种模式：</p>
+<ul>
+<li><strong>推模式——告警数据在上报时，自动推往告警模块</strong></li>
+</ul>
+<p>这种模式最大的一个优点就是实时性好，因为报警的模块可以第一时间拿到这个数据。</p>
+<p>但是“推模式”有很致命的缺点，首先数据是全量灌过来的，解析和暂存会消耗大量的内存。而且这种模式，报警模块只能按照数据来进行分片，如果需要聚合场景计算，很可能这部分数据推往了不同的报警节点，就无法满足了。</p>
+<ul>
+<li><strong>拉模式——由告警模块定时从存储拉取监控数据</strong></li>
+</ul>
+<p>“拉”模式最大的好处在于，报警分片可以按照策略来分片，这样报警模块只需要拉取自己需要的数据即可，而且可以完美支持聚合场景，减少了很大一部分内存消耗。</p>
+<p>而“拉模式”的缺点在于，监控的数据体量非常庞大，高并发的查询会对存储集群造成极大的压力。此处如果出现性能瓶颈，可以考虑监控数据的冷热分离。</p>
+<h2 id="监控的稳定性架构">监控的稳定性架构</h2>
+<p>监控系统，是稳定性工作的基石。如果监控系统都不够稳定，那我们依赖监控系统进行稳定性建设就无从谈起。</p>
+<p>最后，给大家分享几个笔者公司在建设监控系统时的稳定性架构，有问题大家可以随时指出：</p>
+<figure class="medium"><img src="/img/blog/2018-basic-monitoring/10.png"
+         alt="image"/>
+</figure>
+
+<p>在数据上报的链路建设中，可以考虑<strong>使用消息队列来应对流量的潮汐</strong>。因为监控数据的上报，尤其是用户自定义数据的上报，很可能不是均匀的，会与流量、业务峰谷有关。</p>
+<p>此时，通过一个消息队列，来缓冲大批量的没有时间处理的数据，是一个不错的选择。</p>
+<figure class="medium"><img src="/img/blog/2018-basic-monitoring/11.png"
+         alt="image"/>
+</figure>
+
+<p>存储的稳定性，可以考虑数据双写。两个集群分开部署。可以应对<strong>专线断开</strong>以及<strong>分片挂掉</strong>两种情况。</p>
+<figure class="medium"><img src="/img/blog/2018-basic-monitoring/12.png"
+         alt="image"/>
+</figure>
+
+<p>告警其实是比较难做双活的，尤其是alarm这种报警的收敛模块。</p>
+<p>因为双活意味着两份，两份服务，也意味着同一条报警发两次。这明显不符合预期。</p>
+<p>因此，对于告警体系，给大家推荐我们的<strong>主从模式</strong>：从集群平时处于休眠状态，会定时的对主集群进行探测，一旦发现主集群挂掉，或探测不通，就将自身拉起，达到一个故障时间内的双活。</p>
+<p>以上就是笔者关于监控系统的一些建设心得的大纲，后续笔者会针对每一个方向写一篇深入的专题。</p>
+<p>欢迎大家随时讨论交流。</p>
+
+
+</div>
+    <div class="post__footer">
+      
+        <span><a class="category" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span>
+
+
+
+
+      
+
+      
+    </div>
+
+    <div id="comment">
+          <h2>comments</h2>
+          <script
+  src="https://utteranc.es/client.js"
+  repo="gaojiasheng/blog-with-hugo"
+  issue-term="title"
+  theme="github-light"
+  
+  crossorigin="anonymous"
+  async
+></script>
+
+        </div>
+  </div>
+
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Gavin Gao 2022
+
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9c062c557275acbaba71f0c7cd4024da3e3cc825d248bc4b2130811b0965330b.js"
+    integrity="sha256-nAYsVXJ1rLq6cfDHzUAk2j48yCXSSLxLITCBGwllMws="
+    crossorigin="anonymous"
+  ></script></body>
+</html>
